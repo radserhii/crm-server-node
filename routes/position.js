@@ -1,8 +1,11 @@
 const express = require('express');
-const controller = require('../controllers/position');
+const passport = require('passport');
 const router = express.Router();
 
-router.post('/:categoryId', controller.getByCategoryId);
+const controller = require('../controllers/position');
+
+
+router.get('/:categoryId', passport.authenticate('jwt', {session: false}), controller.getByCategoryId);
 router.post('/', controller.create);
 router.patch('/:id', controller.update);
 router.delete('/:id', controller.remove);
