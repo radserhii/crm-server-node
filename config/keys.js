@@ -1,3 +1,4 @@
 module.exports = {
-    mongoURI: 'mongodb://crmtest:secret@localhost/crmtest'
+    mongoURI: 'mongodb://crmtest:secret@localhost/crmtest',
+    jwt: 'testtoken',
 };
